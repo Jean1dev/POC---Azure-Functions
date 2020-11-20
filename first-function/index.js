@@ -1,8 +1,12 @@
+/**
+ *  Exemplo 1 
+ *  https://www.npmjs.com/package/dotenv
+ */
 const { DotenvAzure } = require('dotenv-azure')
 const mongoClient = require('mongodb')
 const axios = require('axios')
-
-module.exports = async (context, req) => {
+ 
+module.exports = async (context) => {
     await new DotenvAzure().config()
     
     const item = await getItem()
@@ -12,7 +16,6 @@ module.exports = async (context, req) => {
         body: result.insertedId || 'Ocorreu um erro'
     };
 }
-
 
 async function getItem() {
     try {
