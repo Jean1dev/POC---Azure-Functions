@@ -7,8 +7,9 @@ const axios = require('axios')
  *
  */
 
+console.log(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
 appInsights
-    .setup('InstrumentationKey=0a947c6e-1270-436e-9178-43e31b634ff7;IngestionEndpoint=https://centralus-2.in.applicationinsights.azure.com/')
+    .setup()
     .setUseDiskRetryCaching(true)
     .setInternalLogging(true, true)
     .setDistributedTracingMode(appInsights.DistributedTracingModes.AI_AND_W3C)
